@@ -1,0 +1,51 @@
+@startuml
+class Dimension {
+- double ancho
+- double altura
+- double profundidad
+~ <<Create>> Dimension(double,double,double)
++ double getAncho()
++ void setAncho(double)
++ double getAltura()
++ void setAltura(double)
++ double getProfundidad()
++ void setProfundidad(double)
+}
+class ObjetoTransportable {
+- double peso
+- Dimension dimension
+- String name
+- boolean fragil
+~ <<Create>> ObjetoTransportable(String,double,Dimension,boolean)
++ double getPeso()
++ void setPeso(double)
++ Dimension getDimension()
++ void setDimension(Dimension)
++ String getName()
++ void setName(String)
++ boolean isFragil()
++ void setFragil(boolean)
+}
+class MedioDeTransporte {
+- ArrayList<ObjetoTransportable> transportables
+- double capacidadMaxima
+- double capacidad
+- Dimension dimension
+- int cantidadMaxima
+~ <<Create>> MedioDeTransporte(double,Dimension,int)
+~ <<Create>> MedioDeTransporte(double,Dimension,int,double)
++ ArrayList<ObjetoTransportable> getTransportables()
++ void setTransportables(ArrayList<ObjetoTransportable>)
++ double getCapacidadMaxima()
++ void setCapacidadMaxima(double)
++ double getCapacidad()
++ void setCapacidad(double)
++ Dimension getDimension()
++ void setDimension(Dimension)
++ int getCantidadMaxima()
++ void setCantidadMaxima(int)
+}
+class Main {
++ {static} void main(String[])
+}
+@enduml
